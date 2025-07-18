@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>女巫的毒药</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>女巫的毒药</h1>
+        </div>
+        
+        <div class="content">
+            <!-- 介绍画面 -->
+            <div id="introScreen" class="screen active intro-screen">
+                <h2>歡迎來到女巫的毒蘋果</h2>
+                <div class="game-rules">
+                    <h2>游戲規則</h2>
+                    <ul>
+                        <li>游戲開始時，每位玩家秘密選擇一個蘋果作為自己的"毒藥"</li>
+                        <li>兩名玩家輪流選擇蘋果吃掉</li>
+                        <li>玩家需要避免吃到對方的毒蘋果</li>
+                        <li>如果玩家吃到了對方的毒蘋果，則該玩家输掉游戏</li>
+                        <li>最後未被毒蘋果毒倒的玩家胜</li>
+                    </ul>
+                </div>
+                <p>準備好挑戰了嗎？點擊下方按鈕開始游戲！</p>
+                <button id="startBtn" class="btn">開始游戲</button>
+            </div>
+            
+            <!-- 设置毒药画面 -->
+            <div id="poisonSetupScreen" class="screen">
+                <div class="game-board">
+                    <div class="player-info">
+                        <div class="player" id="player1Info">
+                            <h2>玩家 1</h2>
+                            <p>設置你的毒蘋果</p>
+                        </div>
+                        <div class="player" id="player2Info">
+                            <h2>玩家 2</h2>
+                            <p>等待設置毒蘋果</p>
+                        </div>
+                    </div>
+                    
+                    <div class="game-message" id="poisonMessage">
+                        玩家 1：请選擇你的毒蘋果
+                    </div>
+                    
+                    <div class="apple-grid" id="poisonGrid">
+                        <!-- 毒苹果网格将由JS生成 -->
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 游戏进行画面 -->
+            <div id="gameScreen" class="screen">
+                <div class="game-board">
+                    <div class="player-info">
+                        <div class="player" id="gamePlayer1">
+                            <h2>玩家 1</h2>
+                            <p>等待回合</p>
+                        </div>
+                        <div class="player" id="gamePlayer2">
+                            <h2>玩家 2</h2>
+                            <p>等待回合</p>
+                        </div>
+                    </div>
+                    
+                    <div class="game-message" id="gameMessage">
+                        玩家 1：请选择要吃的苹果
+                    </div>
+                    
+                    <div class="apple-grid" id="gameGrid">
+                        <!-- 游戏苹果网格将由JS生成 -->
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 游戏结果画面 -->
+            <div id="resultScreen" class="screen result-screen">
+                <h2>游戲结束</h2>
+                <div class="winner" id="winnerMessage">
+                    Player 2 獲勝！
+                </div>
+                <p>恭喜獲勝者！要再來一局嗎？</p>
+                <div>
+                    <button id="restartBtn" class="btn">再玩一次</button>
+                    <button id="homeBtn" class="btn btn-secondary">返回首页</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
