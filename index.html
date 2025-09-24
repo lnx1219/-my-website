@@ -3,157 +3,211 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>女巫的毒蘋果</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>勞校中學 - 颱風停課通知</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Microsoft JhengHei", "微軟正黑體", Arial, sans-serif;
+        }
+        
+        body {
+            background-color: #fff;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .top-bar, .bottom-bar {
+            background-color: #338EE0;
+            width: 100%;
+            padding: 15px 0;
+            color: white;
+            text-align: center;
+        }
+        
+        .top-bar {
+            height: 30px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #338EE0;
+        }
+        
+        .logo {
+            width: 100px;
+            height: 100px;
+            margin-right: 20px;
+        }
+        
+        .school-info h1 {
+            color: #156082;
+            margin-bottom: 5px;
+        }
+        
+        .content {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+        }
+        
+        .announcement-title {
+            color: #d9534f;
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+        
+        .date-time {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #666;
+            font-size: 18px;
+        }
+        
+        .message {
+            margin-bottom: 30px;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-left: 5px solid #338EE0;
+        }
+        
+        .language-section {
+            margin-bottom: 25px;
+        }
+        
+        .language-title {
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #156082;
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-top: 40px;
+        }
+        
+        .school-contact {
+            flex: 1;
+            min-width: 300px;
+            margin: 10px;
+            padding: 20px;
+            background-color: #f0f8ff;
+            border-radius: 8px;
+        }
+        
+        .school-contact h3 {
+            color: #156082;
+            margin-bottom: 15px;
+            padding-bottom: 5px;
+            border-bottom: 1px solid #338EE0;
+        }
+        
+        .contact-item {
+            margin-bottom: 8px;
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 20px;
+            color: #666;
+            font-size: 14px;
+        }
+        
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .logo {
+                margin-right: 0;
+                margin-bottom: 15px;
+            }
+            
+            .contact-info {
+                flex-direction: column;
+            }
+        }
+    </style>
 </head>
 <body>
+    <div class="top-bar"></div>
+    
     <div class="container">
         <div class="header">
-            <div class="title-container">
-                <h1>女巫的毒蘋果</h1>
-                <div class="witch-hat">
-                    <div class="hat-top"></div>
-                    <div class="hat-brim"></div>
-                </div>
-            </div>
-            <div class="moon"></div>
-            <div class="stars">
-                <div class="star"></div>
-                <div class="star"></div>
-                <div class="star"></div>
-                <div class="star"></div>
-                <div class="star"></div>
+            <img src="lh (1).png" alt="勞校中學校徽" class="logo">
+            <div class="school-info">
+                <h1>勞校中學</h1>
+                <p>地址: 澳門筷子基和樂坊二街 163 號</p>
+                <p>Rua Dois do Bairro da Concórdia 163</p>
             </div>
         </div>
         
         <div class="content">
-            <!-- 介紹畫面 -->
-            <div id="introScreen" class="screen active intro-screen">
-                <div class="intro-content">
-                    <h2><i class="fas fa-hat-wizard"></i> 歡迎來到女巫的毒藥遊戲</h2>
-                    <div class="game-rules">
-                        <h2><i class="fas fa-scroll"></i> 遊戲規則</h2>
-                        <ul>
-                            <li><i class="fas fa-apple-alt"></i> 兩名玩家輪流選擇蘋果吃掉</li>
-                            <li><i class="fas fa-flask"></i> 遊戲開始時，每位玩家秘密選擇一個蘋果作為自己的"毒藥"</li>
-                            <li><i class="fas fa-skull"></i> 玩家需要避免吃到任何毒蘋果</li>
-                            <li><i class="fas fa-exclamation-triangle"></i> 如果玩家吃到了毒蘋果，則該玩家輸掉遊戲</li>
-                            <li><i class="fas fa-crown"></i> 最後未被毒蘋果毒倒的玩家獲勝</li>
-                        </ul>
-                    </div>
-                    <div class="player-names">
-                        <div class="input-group">
-                            <label for="player1Name"><i class="fas fa-user"></i> 玩家1名稱:</label>
-                            <input type="text" id="player1Name" placeholder="輸入玩家1名稱" value="玩家1">
-                        </div>
-                        <div class="input-group">
-                            <label for="player2Name"><i class="fas fa-user"></i> 玩家2名稱:</label>
-                            <input type="text" id="player2Name" placeholder="輸入玩家2名稱" value="玩家2">
-                        </div>
-                    </div>
-                    <p>準備好挑戰了嗎？點擊下方按鈕開始遊戲！</p>
-                    <button id="startBtn" class="btn">
-                        <i class="fas fa-play"></i> 開始遊戲
-                    </button>
+            <h2 class="announcement-title">教青局DSEDJ惡劣天氣停課訊息</h2>
+            <div class="date-time">2025-09-24 7:50</div>
+            
+            <div class="message">
+                <div class="language-section">
+                    <div class="language-title">中文</div>
+                    <p>因特區政府已發出撤離訊息，教青局通知，所有學校及教育機構須立即中止教育活動，教職員及學生須立即疏散至安全地方。</p>
+                </div>
+                
+                <div class="language-section">
+                    <div class="language-title">葡文 (Português)</div>
+                    <p>Na sequência das informações de evacuação divulgadas pelo Governo da RAEM, a DSEDJ informa todas as escolas e instituições educativas de que devem suspender, imediatamente, as actividades educativas e evacuar o pessoal docente e não docente, bem como os alunos, para um local seguro.</p>
+                </div>
+                
+                <div class="language-section">
+                    <div class="language-title">英文 (English)</div>
+                    <p>Since the Macao SAR government has issued evacuation information, the DSEDJ announces that all schools and educational institutions have to immediately stop educational activities and evacuate teaching staff, students to a safe location.</p>
                 </div>
             </div>
             
-            <!-- 設置毒藥畫面 -->
-            <div id="poisonSetupScreen" class="screen">
-                <div class="game-board">
-                    <div class="player-info">
-                        <div class="player" id="player1Info">
-                            <h2 id="setupPlayer1Name">玩家 1</h2>
-                            <p>設置你的毒蘋果</p>
-                        </div>
-                        <div class="player" id="player2Info">
-                            <h2 id="setupPlayer2Name">玩家 2</h2>
-                            <p>等待設置毒蘋果</p>
-                        </div>
-                    </div>
-                    <div class="game-message" id="poisonMessage">
-                        <i class="fas fa-exclamation-circle"></i> 玩家 1：請選擇你的毒蘋果
-                    </div>
-                    
-                    <div class="apple-grid" id="poisonGrid">
-                        <!-- 毒蘋果網格將由JS生成 -->
-                    </div>
+            <div class="contact-info">
+                <div class="school-contact">
+                    <h3>勞校中學</h3>
+                    <div class="contact-item">地址: 澳門筷子基和樂坊二街 163 號</div>
+                    <div class="contact-item">Rua Dois do Bairro da Concórdia 163</div>
+                    <div class="contact-item">電話: (+853) 2823-4381</div>
+                    <div class="contact-item">傳真: (+853) 2823-4108</div>
+                    <div class="contact-item">電郵: louhau@macau.ctm.net</div>
                 </div>
-            </div>
-            
-            <!-- 遊戲進行畫面 -->
-            <div id="gameScreen" class="screen">
-                <div class="game-board">
-                    <div class="player-info">
-                        <div class="player" id="gamePlayer1">
-                            <h2 id="gamePlayer1Name">玩家 1</h2>
-                            <p>等待回合</p>
-                        </div>
-                        <div class="player" id="gamePlayer2">
-                            <h2 id="gamePlayer2Name">玩家 2</h2>
-                            <p>等待回合</p>
-                        </div>
-                    </div>
-                    
-                    <div class="game-message" id="gameMessage">
-                        <i class="fas fa-info-circle"></i> 玩家 1：請選擇要吃的蘋果
-                    </div>
-                    
-                    <div class="apple-grid" id="gameGrid">
-                        <!-- 遊戲蘋果網格將由JS生成 -->
-                    </div>
-                    
-                    <div class="game-controls">
-                        <button id="soundToggle" class="btn-icon">
-                            <i class="fas fa-volume-up"></i>
-                        </button>
-                        <button id="restartGameBtn" class="btn btn-secondary">
-                            <i class="fas fa-redo"></i> 重新開始
-                        </button>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- 遊戲結果畫面 -->
-            <div id="resultScreen" class="screen result-screen">
-                <div class="result-content">
-                    <h2><i class="fas fa-flag-checkered"></i> 遊戲結束</h2>
-                    <div class="winner" id="winnerMessage">
-                        玩家 2 獲勝！
-                    </div>
-                    <div class="trophy">
-                        <i class="fas fa-trophy"></i>
-                    </div>
-                    <p>恭喜獲勝者！要再來一局嗎？</p>
-                    <div>
-                        <button id="restartBtn" class="btn">
-                            <i class="fas fa-redo"></i> 再玩一次
-                        </button>
-                        <button id="homeBtn" class="btn btn-secondary">
-                            <i class="fas fa-home"></i> 返回首頁
-                        </button>
-                    </div>
+                
+                <div class="school-contact">
+                    <h3>附屬小學</h3>
+                    <div class="contact-item">地址: 澳門鏡湖馬路 76 號</div>
+                    <div class="contact-item">電話: (+853) 2837-2129</div>
+                    <div class="contact-item">傳真: (+853) 2830-6940</div>
+                    <div class="contact-item">電郵: louhaup@louhau.edu.mo</div>
                 </div>
             </div>
         </div>
-        
-        
-        <!-- 音效元素 -->
-        <audio id="clickSound" preload="auto">
-            <source src="data:audio/mpeg;base64,SUQzBAAAAAABEVRYWFgAAAAtAAADY29tbWVudABCaWdTb3VuZEJhbmsuY29tIC8gTGFTb25vdGhlcXVlLm9yZwBURU5DAAAAHQAAA1N3aXRjaCBQbHVzIMKpIE5DSCBTb2Z0d2FyZQBUSVQyAAAABgAAAzIyMzUAVFNTRQAAAA8AAANMYXZmNTcuODMuMTAwAAAAAAAAAAAAAAD/80DEAAAAA0gAAAAATEFNRTMuMTAwVVVVVVVVVVVVVUxBTUUzLjEwMFVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVf/zQsRbAAADSAAAAABVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVf/zQMSkAAADSAAAAABVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV" type="audio/mpeg">
-        </audio>
-        <audio id="eatSound" preload="auto">
-            <source src="data:audio/mpeg;base64,SUQzBAAAAAABEVRYWFgAAAAtAAADY29tbWVudABCaWdTb3VuZEJhbmsuY29tIC8gTGFTb25vdGhlcXVlLm9yZwBURU5DAAAAHQAAA1N3aXRjaCBQbHVzIMKpIE5DSCBTb2Z0d2FyZQBUSVQyAAAABgAAAzIyMzUAVFNTRQAAAA8AAANMYXZmNTcuODMuMTAwAAAAAAAAAAAAAAD/80DEAAAAA0gAAAAATEFNRTMuMTAwVVVVVVVVVVVVVUxBTUUzLjEwMFVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVf/zQsRbAAADSAAAAABVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVf/zQMSkAAADSAAAAABVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV" type="audio/mpeg">
-        </audio>
-        <audio id="poisonSound" preload="auto">
-            <source src="data:audio/mpeg;base64,SUQzBAAAAAABEVRYWFgAAAAtAAADY29tbWVudABCaWdTb3VuZEJhbmsuY29tIC8gTGFTb25vdGhlcXVlLm9yZwBURU5DAAAAHQAAA1N3aXRjaCBQbHVzIMKpIE5DSCBTb2Z0d2FyZQBUSVQyAAAABgAAAzIyMzUAVFNTRQAAAA8AAANMYXZmNTcuODMuMTAwAAAAAAAAAAAAAAD/80DEAAAAA0gAAAAATEFNRTMuMTAwVVVVVVVVVVVVVUxBTUUzLjEwMFVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVf/zQsRbAAADSAAAAABVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVf/zQMSkAAADSAAAAABVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV" type="audio/mpeg">
-        </audio>
-        <audio id="winSound" preload="auto">
-            <source src="data:audio/mpeg;base64,SUQzBAAAAAABEVRYWFgAAAAtAAADY29tbWVudABCaWdTb3VuZEJhbmsuY29tIC8gTGFTb25vdGhlcXVlLm9yZwBURU5DAAAAHQAAA1N3aXRjaCBQbHVzIMKpIE5DSCBTb2Z0d2FyZQBUSVQyAAAABgAAAzIyMzUAVFNTRQAAAA8AAANMYXZmNTcuODMuMTAwAAAAAAAAAAAAAAD/80DEAAAAA0gAAAAATEFNRTMuMTAwVVVVVVVVVVVVVUxBTUUzLjEwMFVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVf/zQsRbAAADSAAAAABVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVf/zQMSkAAADSAAAAABVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV" type="audio/mpeg">
-        </audio>
     </div>
-
-    <script src="script.js"></script>
+    
+    <div class="bottom-bar">
+        <div class="container">
+            <p>勞校中學 &copy; 2025 版權所有</p>
+        </div>
+    </div>
+    
+    <div class="footer">
+        <p>此為颱風停課通知頁面，請隨時關注最新消息</p>
+    </div>
 </body>
 </html>
